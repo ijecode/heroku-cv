@@ -8,10 +8,10 @@ workflows:
     jobs:
       - node/test
       - cypress/run:
-          requires:
-            - node/test
           start: 'npm start'
           wait-on: 'http://localhost:5000'
+          requires:
+            - node/test
       - heroku/deploy-via-git:
           filters:
             branches:
