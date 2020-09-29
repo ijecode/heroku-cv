@@ -1,11 +1,15 @@
 orbs:
   heroku: circleci/heroku@0.0.10
   node: circleci/node@4.0.1
+  cypress: cypress-io/cypress@1
 version: 2.1
 workflows:
   test-and-deploy:
     jobs:
       - node/test
+      - cypress/run:
+        requires:
+          - node/test
       - heroku/deploy-via-git:
           filters:
             branches:
