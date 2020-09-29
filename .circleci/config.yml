@@ -8,8 +8,8 @@ workflows:
     jobs:
       - node/test
       - cypress/run:
-        requires:
-          - node/test
+          requires:
+            - node/test
       - heroku/deploy-via-git:
           filters:
             branches:
