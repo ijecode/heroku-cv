@@ -7,6 +7,3 @@ workflows:
     jobs:
       - cypress/run:
           yarn: true
-      - heroku/deploy-via-git:
-          requires:
-          - cypress/run
