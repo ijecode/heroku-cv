@@ -11,6 +11,7 @@ workflows:
           requires:
             - node/test
           start: 'npm start'
+          wait-on: 'http://localhost:5000'
       - heroku/deploy-via-git:
           filters:
             branches:
