@@ -10,6 +10,7 @@ workflows:
       - cypress/run:
           requires:
             - node/test
+          start: 'npm start'
       - heroku/deploy-via-git:
           filters:
             branches:
