@@ -20,8 +20,6 @@ test('responds to requests', (t) => {
       t.false(response.error);
       // Successful response
       t.equal(response.statusCode, 200);
-      // Assert content checks
-      t.notEqual(response.body.indexOf("<title>Ian Edgeley - CV</title>"), -1);
     })();
   });
 });
