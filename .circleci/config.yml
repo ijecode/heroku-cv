@@ -8,5 +8,5 @@ workflows:
       - cypress/run:
           yarn: true
       - heroku/deploy-via-git:
-        requires:
+          requires:
           - cypress/run
